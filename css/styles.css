@@ -19,6 +19,12 @@ body {
 header {
   background: linear-gradient(#3a7bd5, #1c4fa0);
   border-bottom: 3px solid #0f2f66;
+  position:fixed;
+  top: 0;         
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 1000;
 }
 
 .bar {
@@ -76,7 +82,7 @@ nav a:hover {
 main {
   max-width: 960px;
   margin: 16px auto;
-  padding: 0 16px;
+  padding: 60px 16px;
 }
 
 /*ALL BORDER COLOR*/
