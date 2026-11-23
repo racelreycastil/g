@@ -1,4 +1,4 @@
-* {
+ * {
   box-sizing: border-box;
 }
 
@@ -15,6 +15,7 @@ body {
   line-height: 1.5;
 }
 
+/*top border*/
 header {
   background: linear-gradient(#3a7bd5, #1c4fa0);
   border-bottom: 3px solid #0f2f66;
@@ -31,11 +32,12 @@ header {
   padding: 10px 16px;
 }
 
+/*skrapyard name design*/
 .brand {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #fff;
+  color: #ffffff;
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
@@ -48,39 +50,45 @@ header {
   object-fit: contain;
 }
 
+/*navigation border*/
 nav {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
 }
 
+/*navigation attributes*/
 nav a {
   padding: 6px 12px;
-  color: #fff;
+  color: #ffffff;
   font-weight: bold;
   text-decoration: none;
   border: 1px solid transparent;
 }
 
+/*navigation attribute after hover*/
 nav a:hover {
   background: #2f66c0;
   border-color: #0f2f66;
 }
 
+/*GAAAAAAAAAAP FROM FIRST BORDER*/
 main {
   max-width: 960px;
   margin: 16px auto;
   padding: 0 16px;
 }
 
+/*ALL BORDER COLOR*/
 .panel {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   padding: 16px;
   background: #fff;
   border: 2px solid #4a4a4a;
   box-shadow: 3px 3px 0 #8a96a6;
 }
 
+/*SKRAPYARD & CHILD HEAD COLOR*/
 h1,
 h2 {
   margin: 0 0 10px;
@@ -91,6 +99,7 @@ h1 {
   font-size: 26px;
 }
 
+/*THE UNDERLINE FROM THE CHILD HEAD*/
 h2 {
   padding-bottom: 6px;
   font-size: 20px;
@@ -98,22 +107,26 @@ h2 {
 }
 
 p {
-  margin: 8px 0;
+  margin: 10px 0;
 }
 
-.note {
+/*you know what it is*/
+.note { 
   color: #666;
   font-style: italic;
 }
 
+/*AUCTION NUMBERING LIST*/
 ol {
-  padding-left: 24px;
+  padding-left: 30px;
 }
 
+/*AUCTION NUMBERING LIST*/
 li {
   margin: 4px 0;
 }
 
+/*TRADING HUB*/
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -121,6 +134,7 @@ li {
   gap: 20px;
 }
 
+/*SAM SYMBOL*/
 .hero img {
   width: 160px;
   height: 160px;
@@ -129,10 +143,12 @@ li {
   border: 2px solid #4a4a4a;
 }
 
+/*MARGIN TRADING HUB BORDER*/
 .hero div {
   flex: 1 1 300px;
 }
 
+/*POST A TRADE & SEND BUTTON*/
 .button {
   display: inline-block;
   margin-top: 8px;
@@ -145,10 +161,12 @@ li {
   cursor: pointer;
 }
 
+/*POST A TRADE AFTER POINTER*/
 .button:hover {
   background: linear-gradient(#6fd36f, #3aa03a);
 }
 
+/*CONTACT US*/
 form {
   display: flex;
   flex-wrap: wrap;
@@ -156,10 +174,12 @@ form {
   gap: 10px;
 }
 
+/*FORM*/
 form button {
   margin-top: 0;
 }
 
+/*List button (ORDER HELP)*/
 select {
   padding: 6px;
   font: inherit;
@@ -167,6 +187,7 @@ select {
   background: #fff;
 }
 
+/*Feet yo*/
 footer {
   padding: 16px;
   color: #fff;
