@@ -87,7 +87,6 @@ main {
 
 /*ALL BORDER COLOR*/
 .panel {
-  scroll-margin-top: 70px;
   margin-bottom: 20px;
   padding: 16px;
   background: #fff;
@@ -268,3 +267,4 @@ footer p {
 .arrow:hover {
   background: linear-gradient(#4f8fe8, #2f66c0);
 }
+
