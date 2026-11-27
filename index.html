@@ -99,6 +99,32 @@
           <li>Watch the countdown. The highest bid when it reaches zero wins.</li>
           <li>Pay and track the order from your account.</li>
         </ol>
+        <div class="grid">
+          <div class="item">
+            <img src="images/auction-1.png" alt="Vintage capacitor" />
+            <h3>Vintage Capacitor Set</h3>
+            <p class="small">by Voltrix Labs</p>
+            <p class="up">&#9650; $42.00</p>
+            <p class="timer" data-seconds="5400"></p>
+            <a class="button" href="#auction">Bid Now</a>
+          </div>
+          <div class="item">
+            <img src="images/auction-2.png" alt="Vacuum tube" />
+            <h3>Rare Vacuum Tube</h3>
+            <p class="small">by Ohmcraft Pro</p>
+            <p class="down">&#9660; $28.50</p>
+            <p class="timer" data-seconds="1800"></p>
+            <a class="button" href="#auction">Bid Now</a>
+          </div>
+          <div class="item">
+            <img src="images/auction-3.png" alt="Servo motor" />
+            <h3>Surplus Servo Motor</h3>
+            <p class="small">by Zenith Dynamics</p>
+            <p class="up">&#9650; $65.00</p>
+            <p class="timer" data-seconds="12600"></p>
+            <a class="button" href="#auction">Bid Now</a>
+          </div>
+        </div>
       </section>
 
       <!--4th border (trading hub)-->
@@ -109,12 +135,58 @@
           <p>Got leftovers from a finished project? Post what you have and what you want, then send or accept trade offers.</p>
           <a class="button" href="#contact">Post a Trade</a>
         </div>
+        <div class="grid">
+          <div class="item">
+            <img src="images/trading-1.png" alt="Microcontroller board" />
+            <h3>Microcontroller Board</h3>
+            <p class="small">Offered by MakerMia</p>
+            <p>Wants: Soldering Iron Kit</p>
+            <p class="up">Trust 96% &middot; 48 trades</p>
+            <a class="button" href="#trading">Offer Trade</a>
+          </div>
+          <div class="item">
+            <img src="images/trading-2.png" alt="Battery pack" />
+            <h3>Battery Pack</h3>
+            <p class="small">Offered by VoltVince</p>
+            <p>Wants: Breadboard</p>
+            <p class="up">Trust 88% &middot; 21 trades</p>
+            <a class="button" href="#trading">Offer Trade</a>
+          </div>
+          <div class="item">
+            <img src="images/trading-3.png" alt="Multimeter" />
+            <h3>Multimeter</h3>
+            <p class="small">Offered by CircuitSam</p>
+            <p>Wants: Microchips</p>
+            <p class="up">Trust 100% &middot; 9 trades</p>
+            <a class="button" href="#trading">Offer Trade</a>
+          </div>
+        </div>
       </section>
 
       <!--5th border (LEARN)-->
       <section class="panel" id="learn">
         <h2>Learn</h2>
         <p>Short guides for getting your first circuit working.</p>
+        <div class="grid">
+          <div class="item">
+            <img src="images/learn-1.png" alt="First circuit tutorial" />
+            <h3>Build Your First Circuit</h3>
+            <p class="small">Tutorial</p>
+            <a class="button" href="#learn">Read</a>
+          </div>
+          <div class="item">
+            <img src="images/learn-2.png" alt="Parts organizer tip" />
+            <h3>Sort Parts by Type</h3>
+            <p class="small">Tip for working faster</p>
+            <a class="button" href="#learn">Read</a>
+          </div>
+          <div class="item">
+            <img src="images/learn-3.png" alt="Robot invention" />
+            <h3>Homemade Desk Robot</h3>
+            <p class="small">Cool invention</p>
+            <a class="button" href="#learn">Read</a>
+          </div>
+        </div>
       </section>
 
       <!--6th border About us-->
@@ -157,6 +229,19 @@
       const track = document.getElementById('track');
       document.getElementById('prev').onclick = () => track.scrollBy({ left: -192 });
       document.getElementById('next').onclick = () => track.scrollBy({ left: 192 });
+
+      document.querySelectorAll('.timer').forEach(t => {
+        let s = Number(t.dataset.seconds);
+        const tick = () => {
+          const h = String(Math.floor(s / 3600)).padStart(2, '0');
+          const m = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
+          const x = String(s % 60).padStart(2, '0');
+          t.textContent = s > 0 ? 'Ends in ' + h + ':' + m + ':' + x : 'Auction ended';
+          s = Math.max(s - 1, 0);
+        };
+        tick();
+        setInterval(tick, 1000);
+      });
     </script>
   </body>
 </html>
