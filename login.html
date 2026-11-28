@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log in | Skrapyard</title>
+    <link rel="icon" href="images/icon.webp" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';</script>
+  </head>
+
+  <body>
+    <header>
+      <div class="bar">
+        <a class="brand" href="index.html">
+          <img src="images/icon.webp" alt="Skrapyard logo" />
+          <span>Skrapyard</span>
+        </a>
+        <div class="tools">
+          <div class="bell-wrap">
+            <button class="tool" id="bell" type="button">Alerts<span class="badge" id="bell-count" hidden>0</span></button>
+            <div class="dropdown" id="events-box" hidden>
+              <h3>Recent events</h3>
+              <ul class="events" id="bell-list"></ul>
+            </div>
+          </div>
+          <a class="tool" href="cart.html">Cart<span class="badge" id="cart-count" hidden>0</span></a>
+          <button class="tool" id="theme-btn" type="button">Theme</button>
+          <a class="tool" id="auth-link" href="login.html">Log in</a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="auction.html">Auction</a>
+          <a href="trading.html">Trading</a>
+          <a href="learn.html">Learn</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel hero">
+        <img src="images/login-1.png" alt="Lock" />
+        <div>
+          <h1>Log in</h1>
+          <h2>Skrapyard - Buy, Sell, &amp; Trade</h2>
+          <p>Log in to bid, trade, and check out. Use a real looking email address and a password with at least 6 characters.</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <form class="stack" id="login-form" novalidate>
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="email" placeholder="name@example.com" />
+          <ul class="rules" id="email-rules"></ul>
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password" />
+          <ul class="rules" id="pass-rules"></ul>
+          <label class="check"><input id="show-pass" type="checkbox" /> Show password</label>
+          <p class="error" id="login-err"></p>
+          <button class="button" type="submit">Log in</button>
+        </form>
+        <div id="logged-in" hidden>
+          <p>You are logged in as <strong id="who"></strong>.</p>
+          <button class="button" id="logout-btn" type="button">Log out</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <a href="contact.html">Help</a>
+        <a href="contact.html">Shipping and returns</a>
+        <a href="contact.html">Buyer protection</a>
+        <a href="about.html">Terms and privacy</a>
+      </nav>
+      <p>Electronic essentials and hardware parts, from new stock to rare finds.</p>
+      <p>&copy; 2026 Skrapyard. Website design by Racel Rey T. Castil, BSIT-2A.</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>
