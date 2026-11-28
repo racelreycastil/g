@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Auction | Skrapyard</title>
+    <link rel="icon" href="images/icon.webp" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';</script>
+  </head>
+
+  <body>
+    <header>
+      <div class="bar">
+        <a class="brand" href="index.html">
+          <img src="images/icon.webp" alt="Skrapyard logo" />
+          <span>Skrapyard</span>
+        </a>
+        <div class="tools">
+          <div class="bell-wrap">
+            <button class="tool" id="bell" type="button">Alerts<span class="badge" id="bell-count" hidden>0</span></button>
+            <div class="dropdown" id="events-box" hidden>
+              <h3>Recent events</h3>
+              <ul class="events" id="bell-list"></ul>
+            </div>
+          </div>
+          <a class="tool" href="cart.html">Cart<span class="badge" id="cart-count" hidden>0</span></a>
+          <button class="tool" id="theme-btn" type="button">Theme</button>
+          <a class="tool" id="auth-link" href="login.html">Log in</a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="auction.html" class="current">Auction</a>
+          <a href="trading.html">Trading</a>
+          <a href="learn.html">Learn</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel hero">
+        <img src="images/auction-2.png" alt="Vacuum tube" />
+        <div>
+          <h1>Auction</h1>
+          <h2>Skrapyard - Buy, Sell, &amp; Trade</h2>
+          <p>Bid on rare, discontinued, and surplus parts. Each listing shows the current price, countdown, and bid count. A green arrow means demand is rising, a red arrow means it is cooling.</p>
+          <ol>
+            <li>Log in, then open a listing and check the specs and seller rating.</li>
+            <li>Enter a bid at or above the current bid plus the minimum increment.</li>
+            <li>Watch the countdown. The highest bid when it reaches zero wins.</li>
+            <li>Pay and track the order from your account.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Live auctions</h2>
+        <div class="grid" id="auction-grid"></div>
+        <button class="button" id="reset" type="button">Reset Auctions</button>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <a href="contact.html">Help</a>
+        <a href="contact.html">Shipping and returns</a>
+        <a href="contact.html">Buyer protection</a>
+        <a href="about.html">Terms and privacy</a>
+      </nav>
+      <p>Electronic essentials and hardware parts, from new stock to rare finds.</p>
+      <p>&copy; 2026 Skrapyard. Website design by Racel Rey T. Castil, BSIT-2A.</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auction.js"></script>
+  </body>
+</html>
