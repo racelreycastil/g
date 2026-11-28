@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trading Hub | Skrapyard</title>
+    <link rel="icon" href="images/icon.webp" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';</script>
+  </head>
+
+  <body>
+    <header>
+      <div class="bar">
+        <a class="brand" href="index.html">
+          <img src="images/icon.webp" alt="Skrapyard logo" />
+          <span>Skrapyard</span>
+        </a>
+        <div class="tools">
+          <div class="bell-wrap">
+            <button class="tool" id="bell" type="button">Alerts<span class="badge" id="bell-count" hidden>0</span></button>
+            <div class="dropdown" id="events-box" hidden>
+              <h3>Recent events</h3>
+              <ul class="events" id="bell-list"></ul>
+            </div>
+          </div>
+          <a class="tool" href="cart.html">Cart<span class="badge" id="cart-count" hidden>0</span></a>
+          <button class="tool" id="theme-btn" type="button">Theme</button>
+          <a class="tool" id="auth-link" href="login.html">Log in</a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="auction.html">Auction</a>
+          <a href="trading.html" class="current">Trading</a>
+          <a href="learn.html">Learn</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel hero">
+        <img src="images/ffsticker3.png" alt="Trading hub mascot" />
+        <div>
+          <h1>Trading Hub</h1>
+          <h2>Skrapyard - Buy, Sell, &amp; Trade</h2>
+          <p>Got leftovers from a finished project? Post what you have and what you want, then send or accept trade offers. Every user shows a trust rate from past trades.</p>
+          <a class="button" href="#post">Post a Trade</a>
+        </div>
+      </section>
+
+      <section class="panel" id="post">
+        <h2>Post a Trade</h2>
+        <form class="stack" id="post-form" novalidate>
+          <label for="post-have">I have</label>
+          <input id="post-have" type="text" maxlength="40" placeholder="Example: 10 spare LEDs" />
+          <label for="post-want">I want</label>
+          <input id="post-want" type="text" maxlength="40" placeholder="Example: A breadboard" />
+          <p class="error" id="post-err"></p>
+          <button class="button" type="submit">Post Trade</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Trade offers</h2>
+        <div class="filters">
+          <input id="trade-search" type="search" placeholder="Search items, wants, or users" />
+        </div>
+        <div class="grid" id="trade-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <a href="contact.html">Help</a>
+        <a href="contact.html">Shipping and returns</a>
+        <a href="contact.html">Buyer protection</a>
+        <a href="about.html">Terms and privacy</a>
+      </nav>
+      <p>Electronic essentials and hardware parts, from new stock to rare finds.</p>
+      <p>&copy; 2026 Skrapyard. Website design by Racel Rey T. Castil, BSIT-2A.</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/trading.js"></script>
+  </body>
+</html>
