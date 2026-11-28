@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Skrapyard</title>
+    <link rel="icon" href="images/icon.webp" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';</script>
+  </head>
+
+  <body>
+    <header>
+      <div class="bar">
+        <a class="brand" href="index.html">
+          <img src="images/icon.webp" alt="Skrapyard logo" />
+          <span>Skrapyard</span>
+        </a>
+        <div class="tools">
+          <div class="bell-wrap">
+            <button class="tool" id="bell" type="button">Alerts<span class="badge" id="bell-count" hidden>0</span></button>
+            <div class="dropdown" id="events-box" hidden>
+              <h3>Recent events</h3>
+              <ul class="events" id="bell-list"></ul>
+            </div>
+          </div>
+          <a class="tool" href="cart.html">Cart<span class="badge" id="cart-count" hidden>0</span></a>
+          <button class="tool" id="theme-btn" type="button">Theme</button>
+          <a class="tool" id="auth-link" href="login.html">Log in</a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="auction.html">Auction</a>
+          <a href="trading.html">Trading</a>
+          <a href="learn.html">Learn</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html" class="current">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel hero">
+        <img src="images/contact-1.png" alt="Envelope" />
+        <div>
+          <h1>Contact Us</h1>
+          <h2>Skrapyard - Buy, Sell, &amp; Trade</h2>
+          <p>Need help with an order, a return, or a dispute? Send us a message and we will reply by email.</p>
+        </div>
+      </section>
+
+      <section class="panel" id="sent-msg" hidden>
+        <h2>Message sent</h2>
+        <p>Thanks! Your reference number is <strong id="sent-ref"></strong>. We will reply by email.</p>
+      </section>
+
+      <section class="panel">
+        <form class="stack" id="contact-form" novalidate>
+          <label for="c-name">Name</label>
+          <input id="c-name" type="text" />
+          <p class="error" id="c-name-err"></p>
+          <label for="c-email">Email</label>
+          <input id="c-email" type="email" placeholder="name@example.com" />
+          <p class="error" id="c-email-err"></p>
+          <label for="c-topic">Topic</label>
+          <select id="c-topic">
+            <option>Order help</option>
+            <option>Returns</option>
+            <option>Dispute with a seller</option>
+            <option>Something else</option>
+          </select>
+          <label for="c-order">Order number (optional)</label>
+          <input id="c-order" type="text" placeholder="SK-123456" />
+          <p class="error" id="c-order-err"></p>
+          <label for="c-message">Message</label>
+          <textarea id="c-message"></textarea>
+          <p class="error" id="c-message-err"></p>
+          <button class="button" type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="panel" id="sent-panel" hidden>
+        <h2>Your recent messages</h2>
+        <ul class="events" id="sent-list"></ul>
+        <button class="button" id="clear-msgs" type="button">Clear History</button>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <a href="contact.html">Help</a>
+        <a href="contact.html">Shipping and returns</a>
+        <a href="contact.html">Buyer protection</a>
+        <a href="about.html">Terms and privacy</a>
+      </nav>
+      <p>Electronic essentials and hardware parts, from new stock to rare finds.</p>
+      <p>&copy; 2026 Skrapyard. Website design by Racel Rey T. Castil, BSIT-2A.</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>
