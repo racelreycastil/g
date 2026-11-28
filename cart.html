@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cart | Skrapyard</title>
+    <link rel="icon" href="images/icon.webp" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';</script>
+  </head>
+
+  <body>
+    <header>
+      <div class="bar">
+        <a class="brand" href="index.html">
+          <img src="images/icon.webp" alt="Skrapyard logo" />
+          <span>Skrapyard</span>
+        </a>
+        <div class="tools">
+          <div class="bell-wrap">
+            <button class="tool" id="bell" type="button">Alerts<span class="badge" id="bell-count" hidden>0</span></button>
+            <div class="dropdown" id="events-box" hidden>
+              <h3>Recent events</h3>
+              <ul class="events" id="bell-list"></ul>
+            </div>
+          </div>
+          <a class="tool" href="cart.html">Cart<span class="badge" id="cart-count" hidden>0</span></a>
+          <button class="tool" id="theme-btn" type="button">Theme</button>
+          <a class="tool" id="auth-link" href="login.html">Log in</a>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="auction.html">Auction</a>
+          <a href="trading.html">Trading</a>
+          <a href="learn.html">Learn</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel hero">
+        <img src="images/cart-1.png" alt="Shopping cart" />
+        <div>
+          <h1>Your Cart</h1>
+          <h2>Skrapyard - Buy, Sell, &amp; Trade</h2>
+          <p>Change quantities, remove parts, and check your total. You need to be logged in to check out.</p>
+        </div>
+      </section>
+
+      <section class="panel" id="order-done" hidden>
+        <h2>Order placed</h2>
+        <p>Thank you! Your order <strong id="order-ref"></strong> for <strong id="order-total"></strong> is on its way.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Items</h2>
+        <div id="cart-box"></div>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <a href="contact.html">Help</a>
+        <a href="contact.html">Shipping and returns</a>
+        <a href="contact.html">Buyer protection</a>
+        <a href="about.html">Terms and privacy</a>
+      </nav>
+      <p>Electronic essentials and hardware parts, from new stock to rare finds.</p>
+      <p>&copy; 2026 Skrapyard. Website design by Racel Rey T. Castil, BSIT-2A.</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>
