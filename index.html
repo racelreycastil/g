@@ -1,247 +1,112 @@
 <!doctype html>
-<!-- mafia boss / the thingy in the tab head stuff-->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Skrapyard | Electronic Essentials Hardware Parts Marketplace</title>
+    <title>Home | Skrapyard</title>
     <link rel="icon" href="images/icon.webp" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';</script>
   </head>
 
-  <!--navigation and logo home-->
   <body>
     <header>
       <div class="bar">
-        <a class="brand" href="#home">
+        <a class="brand" href="index.html">
           <img src="images/icon.webp" alt="Skrapyard logo" />
           <span>Skrapyard</span>
         </a>
+        <div class="tools">
+          <div class="bell-wrap">
+            <button class="tool" id="bell" type="button">Alerts<span class="badge" id="bell-count" hidden>0</span></button>
+            <div class="dropdown" id="events-box" hidden>
+              <h3>Recent events</h3>
+              <ul class="events" id="bell-list"></ul>
+            </div>
+          </div>
+          <a class="tool" href="cart.html">Cart<span class="badge" id="cart-count" hidden>0</span></a>
+          <button class="tool" id="theme-btn" type="button">Theme</button>
+          <a class="tool" id="auth-link" href="login.html">Log in</a>
+        </div>
         <nav>
-          <a href="#home">Home</a>
-          <a href="#shop">Shop</a>
-          <a href="#auction">Auction</a>
-          <a href="#trading">Trading</a>
-          <a href="#learn">Learn</a>
-          <a href="#about">About Us</a>
-          <a href="#contact">Contact</a>
+          <a href="index.html" class="current">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="auction.html">Auction</a>
+          <a href="trading.html">Trading</a>
+          <a href="learn.html">Learn</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main> <!--1st border w/ desc (start shopping)-->
-      <section class="panel hero" id="home">
+    <main>
+      <section class="panel hero">
         <img src="images/ffsticker2.gif" alt="Skrapyard mascot" />
         <div>
           <h1>Find the part. Trade the leftovers.</h1>
           <h2>Skrapyard - Buy, Sell, &amp; Trade</h2>
           <p>Skrapyard is a parts store and swap meet for students, makers, and repair shops. Buy new components at fixed prices, then trade or auction the surplus and rare ones.</p>
           <p class="note">Every listing shows its specs. Every seller has a rating.</p>
-          <a class="button" href="#shop">Start Shopping</a>
+          <a class="button" href="shop.html">Start Shopping</a>
         </div>
       </section>
 
-      <!--2nd border (category)-->
-      <section class="panel" id="shop"> 
-        <h2>Shop by category</h2>
-        <p>Find any part in three clicks or fewer. Filter by voltage, package type, brand, price, or availability.</p>
+      <section class="panel">
+        <h2>Featured parts</h2>
+        <p>Slide through our most popular parts and add them straight to your cart.</p>
         <div class="slider">
           <button class="arrow" id="prev" type="button">&#9664;</button>
-          <div class="track" id="track">
-            <div class="item">
-              <img src="images/catalog-1.png" alt="LED assortment pack" />
-              <h3>LED Assortment</h3>
-              <p>$4.99</p>
-              <a class="button" href="#shop">View</a>
-            </div>
-            <div class="item">
-              <img src="images/catalog-2.png" alt="Jumper cables" />
-              <h3>Jumper Cables</h3>
-              <p>$3.49</p>
-              <a class="button" href="#shop">View</a>
-            </div>
-            <div class="item">
-              <img src="images/catalog-3.png" alt="Soldering iron kit" />
-              <h3>Soldering Iron Kit</h3>
-              <p>$18.00</p>
-              <a class="button" href="#shop">View</a>
-            </div>
-            <div class="item">
-              <img src="images/catalog-4.png" alt="Microchips" />
-              <h3>Microchips</h3>
-              <p>$6.75</p>
-              <a class="button" href="#shop">View</a>
-            </div>
-            <div class="item">
-              <img src="images/catalog-5.png" alt="Transistor set" />
-              <h3>Transistor Set</h3>
-              <p>$5.25</p>
-              <a class="button" href="#shop">View</a>
-            </div>
-            <div class="item">
-              <img src="images/catalog-6.png" alt="Breadboard" />
-              <h3>Breadboard</h3>
-              <p>$7.50</p>
-              <a class="button" href="#shop">View</a>
-            </div>
-          </div>
+          <div class="track" id="track"></div>
           <button class="arrow" id="next" type="button">&#9654;</button>
         </div>
       </section>
 
-      <!--3rd border (auction side)-->
-      <section class="panel" id="auction">
-        <h2>Auction</h2>
-        <p>Bid on rare, discontinued, and surplus parts. Each listing shows the starting price, minimum bid increment, countdown, and full bid history.</p>
-        <ol>
-          <li>Log in, then open a listing and check the specs and seller rating.</li>
-          <li>Enter a bid at or above the current bid plus the minimum increment.</li>
-          <li>Watch the countdown. The highest bid when it reaches zero wins.</li>
-          <li>Pay and track the order from your account.</li>
-        </ol>
+      <section class="panel">
+        <h2>Explore Skrapyard</h2>
         <div class="grid">
-          <div class="item">
-            <img src="images/auction-1.png" alt="Vintage capacitor" />
-            <h3>Vintage Capacitor Set</h3>
-            <p class="small">by Voltrix Labs</p>
-            <p class="up">&#9650; $42.00</p>
-            <p class="timer" data-seconds="5400"></p>
-            <a class="button" href="#auction">Bid Now</a>
-          </div>
-          <div class="item">
-            <img src="images/auction-2.png" alt="Vacuum tube" />
-            <h3>Rare Vacuum Tube</h3>
-            <p class="small">by Ohmcraft Pro</p>
-            <p class="down">&#9660; $28.50</p>
-            <p class="timer" data-seconds="1800"></p>
-            <a class="button" href="#auction">Bid Now</a>
-          </div>
-          <div class="item">
-            <img src="images/auction-3.png" alt="Servo motor" />
-            <h3>Surplus Servo Motor</h3>
-            <p class="small">by Zenith Dynamics</p>
-            <p class="up">&#9650; $65.00</p>
-            <p class="timer" data-seconds="12600"></p>
-            <a class="button" href="#auction">Bid Now</a>
-          </div>
+          <a class="item" href="shop.html">
+            <img src="images/catalog-6.png" alt="Shop" />
+            <h3>Shop</h3>
+            <p class="small">Fixed-price parts</p>
+          </a>
+          <a class="item" href="auction.html">
+            <img src="images/auction-1.png" alt="Auction" />
+            <h3>Auction</h3>
+            <p class="small">Bid on rare parts</p>
+          </a>
+          <a class="item" href="trading.html">
+            <img src="images/trading-1.png" alt="Trading Hub" />
+            <h3>Trading Hub</h3>
+            <p class="small">Swap your leftovers</p>
+          </a>
+          <a class="item" href="learn.html">
+            <img src="images/learn-1.png" alt="Learn" />
+            <h3>Learn</h3>
+            <p class="small">Guides and tips</p>
+          </a>
         </div>
       </section>
 
-      <!--4th border (trading hub)-->
-      <section class="panel hero" id="trading">
-        <img src="images/ffsticker3.png" alt="Trading hub mascot" />
-        <div>
-          <h2>Trading Hub</h2>
-          <p>Got leftovers from a finished project? Post what you have and what you want, then send or accept trade offers.</p>
-          <a class="button" href="#contact">Post a Trade</a>
-        </div>
-        <div class="grid">
-          <div class="item">
-            <img src="images/trading-1.png" alt="Microcontroller board" />
-            <h3>Microcontroller Board</h3>
-            <p class="small">Offered by MakerMia</p>
-            <p>Wants: Soldering Iron Kit</p>
-            <p class="up">Trust 96% &middot; 48 trades</p>
-            <a class="button" href="#trading">Offer Trade</a>
-          </div>
-          <div class="item">
-            <img src="images/trading-2.png" alt="Battery pack" />
-            <h3>Battery Pack</h3>
-            <p class="small">Offered by VoltVince</p>
-            <p>Wants: Breadboard</p>
-            <p class="up">Trust 88% &middot; 21 trades</p>
-            <a class="button" href="#trading">Offer Trade</a>
-          </div>
-          <div class="item">
-            <img src="images/trading-3.png" alt="Multimeter" />
-            <h3>Multimeter</h3>
-            <p class="small">Offered by CircuitSam</p>
-            <p>Wants: Microchips</p>
-            <p class="up">Trust 100% &middot; 9 trades</p>
-            <a class="button" href="#trading">Offer Trade</a>
-          </div>
-        </div>
-      </section>
-
-      <!--5th border (LEARN)-->
-      <section class="panel" id="learn">
-        <h2>Learn</h2>
-        <p>Short guides for getting your first circuit working.</p>
-        <div class="grid">
-          <div class="item">
-            <img src="images/learn-1.png" alt="First circuit tutorial" />
-            <h3>Build Your First Circuit</h3>
-            <p class="small">Tutorial</p>
-            <a class="button" href="#learn">Read</a>
-          </div>
-          <div class="item">
-            <img src="images/learn-2.png" alt="Parts organizer tip" />
-            <h3>Sort Parts by Type</h3>
-            <p class="small">Tip for working faster</p>
-            <a class="button" href="#learn">Read</a>
-          </div>
-          <div class="item">
-            <img src="images/learn-3.png" alt="Robot invention" />
-            <h3>Homemade Desk Robot</h3>
-            <p class="small">Cool invention</p>
-            <a class="button" href="#learn">Read</a>
-          </div>
-        </div>
-      </section>
-
-      <!--6th border About us-->
-      <section class="panel" id="about">
-        <h2>About Us</h2>
-        <p>Skrapyard combines a curated parts store with a community that sells, swaps, and auctions. Our goal is to be the beginner-friendly place to get common parts, and the fair place to find the rare ones.</p>
-        <p>Buying electronic parts usually means choosing between big distributors built for bulk orders and general marketplaces where quality is hit or miss. Beginners struggle to find the right component, and leftover parts from finished projects sit in drawers.</p>
-      </section>
-
-      <!--7th border (contact) w/ SELECT optiion-->
-      <section class="panel" id="contact">
-        <h2>Contact Us</h2>
-        <p>Need help with an order, a return, or a dispute? Send us a message and we will reply by email.</p>
-        <form>
-          <label for="c-topic">Topic</label>
-          <select id="c-topic">
-            <option>Order help</option>
-            <option>Returns</option>
-            <option>Dispute with a seller</option>
-            <option>Something else</option>
-          </select>
-          <button class="button" type="button">Send</button>
-        </form>
+      <section class="panel">
+        <h2>Recent events</h2>
+        <ul class="events" id="home-events"></ul>
       </section>
     </main>
 
-    <!--bottom border feet brah-->
     <footer>
       <nav>
-        <a href="#contact">Help</a>
-        <a href="#contact">Shipping and returns</a>
-        <a href="#contact">Buyer protection</a>
-        <a href="#about">Terms and privacy</a>
+        <a href="contact.html">Help</a>
+        <a href="contact.html">Shipping and returns</a>
+        <a href="contact.html">Buyer protection</a>
+        <a href="about.html">Terms and privacy</a>
       </nav>
       <p>Electronic essentials and hardware parts, from new stock to rare finds.</p>
       <p>&copy; 2026 Skrapyard. Website design by Racel Rey T. Castil, BSIT-2A.</p>
     </footer>
 
-    <script>
-      const track = document.getElementById('track');
-      document.getElementById('prev').onclick = () => track.scrollBy({ left: -192 });
-      document.getElementById('next').onclick = () => track.scrollBy({ left: 192 });
-
-      document.querySelectorAll('.timer').forEach(t => {
-        let s = Number(t.dataset.seconds);
-        const tick = () => {
-          const h = String(Math.floor(s / 3600)).padStart(2, '0');
-          const m = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
-          const x = String(s % 60).padStart(2, '0');
-          t.textContent = s > 0 ? 'Ends in ' + h + ':' + m + ':' + x : 'Auction ended';
-          s = Math.max(s - 1, 0);
-        };
-        tick();
-        setInterval(tick, 1000);
-      });
-    </script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
   </body>
 </html>
